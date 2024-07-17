@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Gay</title>
+        
+    <style>
+        body {
+            background-color: red;
+            text-align: center;
+        }
+        .painel {
+            padding-top: 20px;
+            margin: auto;
+            width: 500px;
+            height: 570px;
+            background-color: white;
+            border-radius: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1 {
+            font-size: 500;
+        }
+        #sim {
+            width: 80px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: red;
+            color: bisque;
+            font-size: 25px;
+            margin-left: -90px;
+        }
+        #nao {
+            position: absolute;
+            width: 80px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: red;
+            color: bisque;
+            font-size: 25px;
+            margin-left: 10px;
+        }
+        .bb {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="uso">
+        <h1>Vamos testa se vc é gay</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Gay_Pride_Flag_-_Animated.gif/640px-Gay_Pride_Flag_-_Animated.gif">
+        <h2>Vamos e se revele!</h2>
+        <a  href="https://media.tenor.com/ls_mP5Li3eIAAAAM/gay-sus.gif"><button id="sim">Sim!</button></a>
+        <button onclick="fuja()" id="nao">Não!</button>
+        <audio id="audioNao">
+            <source src="Pabllo Vittar - Corpo Sensual (feat. Mateus Carrilho) (Áudio Oficial) (320).mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+            var audio = document.getElementById("audioNao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+            audio.play();
+        }
+    </script>
+</body>
+</html>
